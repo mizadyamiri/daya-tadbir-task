@@ -2,8 +2,10 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 import localFont from "next/font/local";
-import { Container, CssBaseline } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
+
+import Navbar from "@/app/_components/NavBar";
 
 export const yekan = localFont({
   src: "../public/fonts/yekan-regular.woff",
@@ -12,7 +14,7 @@ export const yekan = localFont({
 });
 
 export const metadata: Metadata = {
-  title: { template: "فروشگاه تدبیر دایا | %s", default: "فروشگاه تدبیر دایا" },
+  title: { template: "فروشگاه دایا تدبیر | %s", default: "فروشگاه دایا تدبیر" },
   description: "an ecommerce project created with next@15, mui and ...",
 };
 
@@ -27,7 +29,10 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Container>{children}</Container>
+
+            <Navbar />
+
+            {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
