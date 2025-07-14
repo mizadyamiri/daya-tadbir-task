@@ -6,6 +6,7 @@ import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
 
 import Navbar from "@/app/_components/NavBar";
+import Footer from "@/app/_components/Footer";
 
 export const yekan = localFont({
   src: "../public/fonts/yekan-regular.woff",
@@ -33,6 +34,8 @@ export default function RootLayout({
             <Navbar />
 
             {children}
+
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
