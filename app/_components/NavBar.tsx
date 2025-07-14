@@ -10,25 +10,26 @@ const Navbar = () => {
     <Stack
       alignItems={"center"}
       justifyContent={"center"}
-      sx={{ width: 1, height: 60, backgroundColor: "#fff" }}
+      sx={{ width: 1, height: 80, bgcolor: "#fff" }}
     >
       <Container maxWidth='lg' sx={{ padding: { lg: "0px !important" } }}>
         <Stack direction='row' alignItems='center' justifyContent='space-between'>
           <MuiLink href='/'>
-            <Image src={dayatadbirlogo} width={80} height={25} alt='daya tadbir logo' />
+            <Image
+              src={dayatadbirlogo}
+              width={120}
+              style={{ height: "auto" }}
+              alt='daya tadbir logo'
+            />
           </MuiLink>
 
           <Stack direction='row' alignItems={"center"} gap={2}>
             <MuiLink href='/cart'>
-              <LocalMallOutlinedIcon
-                sx={{ height: "auto", my: "auto" }}
-                color='secondary'
-                fontSize='medium'
-              />
+              <LocalMallOutlinedIcon color='secondary' fontSize='large' />
             </MuiLink>
 
             <MuiLink href='/login'>
-              <AccountCircleOutlinedIcon color='secondary' fontSize='medium' />
+              <AccountCircleOutlinedIcon color='secondary' fontSize='large' />
             </MuiLink>
           </Stack>
         </Stack>

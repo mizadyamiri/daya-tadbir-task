@@ -1,7 +1,7 @@
 "use client";
 
 import { createTheme } from "@mui/material/styles";
-// import { faIR } from "@mui/material/locale";
+import { faIR } from "@mui/material/locale";
 
 const theme = createTheme(
   {
@@ -14,8 +14,8 @@ const theme = createTheme(
     typography: {
       fontFamily: "var(--font-yekan)",
     },
-  }
-  // faIR
+  },
+  faIR
 );
 
 export default theme;
