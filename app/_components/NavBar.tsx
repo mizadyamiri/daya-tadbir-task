@@ -10,7 +10,14 @@ const Navbar = () => {
     <Stack
       alignItems={"center"}
       justifyContent={"center"}
-      sx={{ width: 1, height: 80, bgcolor: "#fff" }}
+      sx={{
+        width: 1,
+        height: 80,
+        bgcolor: "#fff",
+        position: "sticky",
+        top: 0,
+        zIndex: 999,
+      }}
     >
       <Container maxWidth='lg' sx={{ padding: { lg: "0px !important" } }}>
         <Stack direction='row' alignItems='center' justifyContent='space-between'>
