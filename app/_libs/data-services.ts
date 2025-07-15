@@ -19,3 +19,16 @@ export async function getProducts(): Promise<Products[]> {
     throw err;
   }
 }
+
+export async function getProduct(id: number | string): Promise<Products> {
+  try {
+    const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+    if (!res.ok) throw new Error(`${res.status}, ${res.statusText}`);
+
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+}
