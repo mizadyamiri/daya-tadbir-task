@@ -19,7 +19,7 @@ export default function Footer() {
     { title: "پی گیری سفارش" },
     { title: "شرایط بازگشت" },
     { title: "نحوه ارسال" },
-    { title: "تماس بل ما" },
+    { title: "تماس با ما" },
     { title: "پرسش های پر تکرار" },
   ];
   return (

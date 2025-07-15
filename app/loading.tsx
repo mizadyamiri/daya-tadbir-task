@@ -1,3 +1,17 @@
+import { CircularProgress } from "@mui/material";
+import Box from "@mui/material/Box";
+
 export default function Loading() {
-  return <p>LOADING DATA...</p>;
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100dvh",
+      }}
+    >
+      <CircularProgress />
+    </Box>
+  );
 }
