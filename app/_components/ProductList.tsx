@@ -6,7 +6,6 @@ import commafy from "@/app/_libs/utiles";
 
 export default async function ProductList() {
   const products = await getProducts();
-  console.log(products);
 
   return (
     <Grid container spacing={2} columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>

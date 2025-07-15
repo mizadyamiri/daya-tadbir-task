@@ -1,6 +1,7 @@
-import { Container, Stack, Typography, Button, Skeleton } from "@mui/material";
+import { Container, Stack, Typography, Button } from "@mui/material";
 import ProductList from "@/app/_components/ProductList";
 import { Suspense } from "react";
+import ProductListSkeleton from "@/app/_components/ProductListSkeleton";
 
 export default function Products() {
   return (
@@ -21,7 +22,7 @@ export default function Products() {
           </Stack>
         </Stack>
 
-        <Suspense fallback={<Skeleton />}>
+        <Suspense fallback={<ProductListSkeleton />}>
           <ProductList />
         </Suspense>
       </Stack>
