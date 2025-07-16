@@ -1,6 +1,7 @@
 import Container from "@mui/material/Container";
 import CartItem from "../_components/CartItem";
 import { Stack, Typography, Paper, Button } from "@mui/material";
+import { Metadata } from "next";
 
 const mockCart = [
   {
@@ -43,6 +44,10 @@ const mockCart = [
     },
   },
 ];
+
+export const metadata: Metadata = {
+  title: "سبد خرید",
+};
 
 export default function page() {
   if (mockCart.length === 0)

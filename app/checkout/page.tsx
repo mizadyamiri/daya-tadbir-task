@@ -1,5 +1,10 @@
 import { Paper, Container, Typography, Box, TextField, Button } from "@mui/material";
 import SelectProvinceAndCity from "@/app/_components/SelectProvinceAndCity";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "تکمیل خرید",
+};
 
 export default function Page() {
   return (

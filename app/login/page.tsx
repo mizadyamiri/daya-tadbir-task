@@ -1,4 +1,9 @@
 import { Paper, Container, Typography, Box, TextField, Button } from "@mui/material";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ورود",
+};
 
 function page() {
   return (
