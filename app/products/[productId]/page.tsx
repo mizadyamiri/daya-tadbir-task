@@ -1,3 +1,5 @@
+import MuiLink from "@/app/_components/MuiLink";
+import { getSession } from "@/app/_libs/auth";
 import { getProduct } from "@/app/_libs/data-services";
 import commafy from "@/app/_libs/utiles";
 import {
@@ -29,6 +31,7 @@ export default async function Page({
 }) {
   const { productId } = await params;
   const product = await getProduct(productId);
+  const session = await getSession();
 
   return (
     <Container maxWidth='lg' sx={{ padding: { lg: "0px !important" }, mt: 6 }}>
@@ -49,7 +52,7 @@ export default async function Page({
             justifyContent: "space-between",
             gap: 10,
             direction: "ltr",
-            width: "60%",
+            width: { md: "60%", xs: "100%" },
             p: 0,
           }}
         >
@@ -65,9 +68,17 @@ export default async function Page({
             <Typography sx={{ fontSize: 24, color: "green", textAlign: "left" }}>
               {commafy(product.price)} تومان
             </Typography>
-            <Button variant='contained' sx={{ width: "100%", mt: 5 }}>
-              افزودن به سبد
-            </Button>
+            {session ? (
+              <Button variant='contained' sx={{ width: "100%", mt: 5 }}>
+                افزودن به سبد
+              </Button>
+            ) : (
+              <MuiLink href='/login'>
+                <Button variant='contained' sx={{ width: "100%", mt: 5 }}>
+                  ابتدا وارد شوید
+                </Button>
+              </MuiLink>
+            )}
           </Box>
         </CardContent>
 

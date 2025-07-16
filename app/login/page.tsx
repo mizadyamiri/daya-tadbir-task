@@ -1,14 +1,16 @@
-import { Paper, Container, Typography, Box, TextField, Button } from "@mui/material";
+import { Paper, Container, Typography, Box, TextField } from "@mui/material";
+import SubmitButton from "@/app/_components/SubmitButton";
 import { Metadata } from "next";
+import { signInAction } from "@/app/_libs/actions";
 
 export const metadata: Metadata = {
   title: "ورود",
 };
 
-function page() {
+export default function Page() {
   return (
     <Container maxWidth='xs' sx={{ padding: { lg: "0px !important" }, my: 6 }}>
-      <form>
+      <form action={signInAction}>
         <Paper
           elevation={8}
           sx={{
@@ -25,7 +27,8 @@ function page() {
 
           <Box width={1}>
             <TextField
-              id='username'
+              id='email'
+              name='email'
               label='ایمیل'
               variant='outlined'
               type='email'
@@ -35,6 +38,7 @@ function page() {
             />
             <TextField
               id='password'
+              name='password'
               label='رمز عبور'
               variant='outlined'
               type='password'
@@ -44,18 +48,9 @@ function page() {
             />
           </Box>
 
-          <Button
-            type='submit'
-            variant='contained'
-            fullWidth
-            sx={{ fontSize: 18, mt: 5 }}
-          >
-            ورود
-          </Button>
+          <SubmitButton label='ورود' />
         </Paper>
       </form>
     </Container>
   );
 }
-
-export default page;

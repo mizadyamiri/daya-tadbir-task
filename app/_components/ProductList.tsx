@@ -1,11 +1,21 @@
 import { getProducts } from "../_libs/data-services";
 import Image from "next/image";
-import { CardMedia, Grid, Typography, Card, CardContent } from "@mui/material";
+import {
+  CardMedia,
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+  Button,
+  Stack,
+} from "@mui/material";
 import MuiLink from "./MuiLink";
 import commafy from "@/app/_libs/utiles";
+import { getSession } from "@/app/_libs/auth";
 
 export default async function ProductList() {
   const products = await getProducts();
+  const session = await getSession();
 
   return (
     <Grid container spacing={2} columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
@@ -23,7 +33,7 @@ export default async function ProductList() {
               </CardMedia>
               <CardContent
                 sx={{
-                  height: 150,
+                  minHeight: 150,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
@@ -32,9 +42,18 @@ export default async function ProductList() {
                 <Typography variant='h3' sx={{ fontSize: 16 }}>
                   {item.title}
                 </Typography>
-                <Typography variant='body1' sx={{ color: "green", textAlign: "left" }}>
-                  {commafy(item.price)} تومان
-                </Typography>
+                <Stack
+                  direction={"row-reverse"}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                >
+                  <Typography variant='body1' sx={{ color: "green", textAlign: "left" }}>
+                    {commafy(item.price)} تومان
+                  </Typography>
+                  {session ? (
+                    <Button variant='contained'>اضافه به سبد خرید</Button>
+                  ) : null}
+                </Stack>
               </CardContent>
             </Card>
           </MuiLink>
