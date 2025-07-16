@@ -11,6 +11,17 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ productId: string }>;
+}) {
+  const { productId } = await params;
+  const { title } = await getProduct(productId);
+
+  return { title };
+}
+
 export default async function Page({
   params,
 }: {
@@ -38,7 +49,7 @@ export default async function Page({
             justifyContent: "space-between",
             gap: 10,
             direction: "ltr",
-
+            width: "60%",
             p: 0,
           }}
         >
@@ -62,7 +73,7 @@ export default async function Page({
 
         <CardMedia
           sx={{
-            width: { md: 2000, xs: "100%" },
+            width: { md: "40%", xs: "100%" },
             height: { md: "auto", sm: 400, xs: 200 },
             position: "relative",
           }}
