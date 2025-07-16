@@ -7,21 +7,22 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import logo from "@/public/images/daya-tadbir-logo.png";
 
+const QuickLinks = [
+  { title: "خانه" },
+  { title: "درباره ما" },
+  { title: "فروشگاه" },
+  { title: "بلاگ" },
+  { title: "تماس باما" },
+];
+const HelpLinks = [
+  { title: "پی گیری سفارش" },
+  { title: "شرایط بازگشت" },
+  { title: "نحوه ارسال" },
+  { title: "تماس با ما" },
+  { title: "پرسش های پر تکرار" },
+];
+
 export default function Footer() {
-  const QuickLinks = [
-    { title: "خانه" },
-    { title: "درباره ما" },
-    { title: "فروشگاه" },
-    { title: "بلاگ" },
-    { title: "تماس باما" },
-  ];
-  const HelpLinks = [
-    { title: "پی گیری سفارش" },
-    { title: "شرایط بازگشت" },
-    { title: "نحوه ارسال" },
-    { title: "تماس با ما" },
-    { title: "پرسش های پر تکرار" },
-  ];
   return (
     <Container
       maxWidth={"lg"}
@@ -45,7 +46,12 @@ export default function Footer() {
             طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
             لازم است، و برای شرایط فعلی تکنولوژی
           </Typography>
-          <Stack direction={"row"} alignItems={"center"} gap={3}>
+          <Stack
+            direction={"row"}
+            justifyContent={"flex-start"}
+            alignItems={"center"}
+            gap={1}
+          >
             <InstagramIcon
               sx={{ fill: "#9d9d9d", cursor: "pointer", "&:hover": { fill: "#72aec8" } }}
             />
