@@ -1,4 +1,4 @@
-import { CircularProgress } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
 export default function Loading() {
@@ -8,7 +8,7 @@ export default function Loading() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100dvh",
+        minHeight: "calc(100vh - 570px)",
       }}
     >
       <CircularProgress />

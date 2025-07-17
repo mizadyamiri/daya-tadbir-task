@@ -1,4 +1,8 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 import Link from "next/link";
 import monitor from "@/public/images/samsung-monitor-transparent.png";
 import Image from "next/image";

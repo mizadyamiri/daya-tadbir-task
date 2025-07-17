@@ -2,7 +2,13 @@ import { getProduct } from "@/app/_libs/data-services";
 import { getSession } from "@/app/_libs/auth";
 import commafy from "@/app/_libs/utiles";
 import CartButton from "@/app/_components/CartButton";
-import { Box, Typography, Container, Card, CardContent, CardMedia } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+
 import Image from "next/image";
 
 export async function generateMetadata({

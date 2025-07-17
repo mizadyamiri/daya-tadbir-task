@@ -3,13 +3,15 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Box, Container, Button } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import samsngMonitorImage from "@/public/images/samsung-monitor.jpg";
 import wdHDDImage from "@/public/images/wd-hard.jpg";
 import spSSDImage from "@/public/images/sp-ssd.jpg";
-// 14 9  11
+
 const Images = [
   { imageData: samsngMonitorImage, id: 14 },
   { imageData: wdHDDImage, id: 9 },

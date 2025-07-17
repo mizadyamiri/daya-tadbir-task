@@ -1,4 +1,5 @@
-import { Container, Stack } from "@mui/material";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
 import MuiLink from "./MuiLink";
 import Image from "next/image";
 import dayatadbirlogo from "@/public/images/daya-tadbir-logo.png";

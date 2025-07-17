@@ -1,4 +1,6 @@
-import { Stack, Typography, Button } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 import { Metadata } from "next";
 import Link from "next/link";
 

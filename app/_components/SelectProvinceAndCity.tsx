@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
-import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 import allProvinces from "@/app/_libs/allProvinces.json";
 import allCities from "@/app/_libs/allCities.json";
 

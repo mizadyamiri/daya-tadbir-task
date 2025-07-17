@@ -1,14 +1,12 @@
 import { getProducts } from "../_libs/data-services";
 import Image from "next/image";
-import {
-  CardMedia,
-  Grid,
-  Typography,
-  Card,
-  CardContent,
-  Button,
-  Stack,
-} from "@mui/material";
+import CardMedia from "@mui/material/CardMedia";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 import MuiLink from "./MuiLink";
 import commafy from "@/app/_libs/utiles";
 import { getSession } from "@/app/_libs/auth";

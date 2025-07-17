@@ -1,5 +1,6 @@
 import Typography from "@mui/material/Typography";
-import { Grid, IconButton } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import IconButton from "@mui/material/IconButton";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import Image from "next/image";

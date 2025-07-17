@@ -1,4 +1,9 @@
-import { Paper, Container, Typography, Box, TextField, Button } from "@mui/material";
+import Paper from "@mui/material/Paper";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import SelectProvinceAndCity from "@/app/_components/SelectProvinceAndCity";
 import { Metadata } from "next";
 
