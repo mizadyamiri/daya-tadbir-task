@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 
 import Navbar from "@/app/_components/NavBar";
 import Footer from "@/app/_components/Footer";
+import { CartStoreProvider } from "./_store/cart-store-provider";
 
 export const yekan = localFont({
   src: "../public/fonts/yekan-regular.woff",
@@ -31,11 +32,13 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <CssBaseline />
 
-            <Navbar />
+            <CartStoreProvider>
+              <Navbar />
 
-            {children}
+              {children}
 
-            <Footer />
+              <Footer />
+            </CartStoreProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

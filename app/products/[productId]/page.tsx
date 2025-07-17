@@ -1,16 +1,8 @@
-import MuiLink from "@/app/_components/MuiLink";
-import { getSession } from "@/app/_libs/auth";
 import { getProduct } from "@/app/_libs/data-services";
+import { getSession } from "@/app/_libs/auth";
 import commafy from "@/app/_libs/utiles";
-import {
-  Box,
-  Typography,
-  Container,
-  Card,
-  CardContent,
-  CardMedia,
-  Button,
-} from "@mui/material";
+import CartButton from "@/app/_components/CartButton";
+import { Box, Typography, Container, Card, CardContent, CardMedia } from "@mui/material";
 import Image from "next/image";
 
 export async function generateMetadata({
@@ -68,17 +60,8 @@ export default async function Page({
             <Typography sx={{ fontSize: 24, color: "green", textAlign: "left" }}>
               {commafy(product.price)} تومان
             </Typography>
-            {session ? (
-              <Button variant='contained' sx={{ width: "100%", mt: 5 }}>
-                افزودن به سبد
-              </Button>
-            ) : (
-              <MuiLink href='/login'>
-                <Button variant='contained' sx={{ width: "100%", mt: 5 }}>
-                  ابتدا وارد شوید
-                </Button>
-              </MuiLink>
-            )}
+
+            <CartButton session={session} product={product} />
           </Box>
         </CardContent>
 

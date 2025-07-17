@@ -1,10 +1,9 @@
-import { Container, IconButton, Stack } from "@mui/material";
-import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import { Container, Stack } from "@mui/material";
 import MuiLink from "./MuiLink";
 import Image from "next/image";
 import dayatadbirlogo from "@/public/images/daya-tadbir-logo.png";
 import { getSession } from "@/app/_libs/auth";
+import NavbarButtons from "./NavbarButtons";
 
 export default async function Navbar() {
   const session = await getSession();
@@ -34,19 +33,7 @@ export default async function Navbar() {
           </MuiLink>
 
           <Stack direction='row' alignItems={"center"}>
-            {session ? (
-              <MuiLink href='/cart'>
-                <IconButton size='large'>
-                  <LocalMallOutlinedIcon color='secondary' />
-                </IconButton>
-              </MuiLink>
-            ) : (
-              <MuiLink href='/login'>
-                <IconButton size='large'>
-                  <AccountCircleOutlinedIcon color='secondary' />
-                </IconButton>
-              </MuiLink>
-            )}
+            <NavbarButtons session={session} />
           </Stack>
         </Stack>
       </Container>

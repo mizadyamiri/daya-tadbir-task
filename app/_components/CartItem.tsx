@@ -2,10 +2,17 @@ import Typography from "@mui/material/Typography";
 import { Grid, IconButton } from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { Products } from "@/app/_libs/data-services";
 import Image from "next/image";
+import { CartItem as CartItemProps } from "@/app/_store/cart-store";
+import { useCartStore } from "@/app/_store/cart-store-provider";
 
-export default function CartItem({ cartItem }: { cartItem: Products }) {
+export default function CartItem({ cartItem }: { cartItem: CartItemProps }) {
+  const { addItem, removeItem } = useCartStore(state => state);
+
+  const handleAddItem = () => {
+    addItem({ ...cartItem, quantity: 1 });
+  };
+
   return (
     <Grid
       container
@@ -38,18 +45,18 @@ export default function CartItem({ cartItem }: { cartItem: Products }) {
           {cartItem.price}
         </Typography>
 
-        <IconButton size='small'>
+        <IconButton onClick={() => removeItem(cartItem.id)} size='small'>
           <RemoveIcon fontSize='small' />
         </IconButton>
         <Typography variant='body1' fontSize={18}>
-          {1}
+          {cartItem.quantity}
         </Typography>
-        <IconButton size='small'>
+        <IconButton onClick={handleAddItem} size='small'>
           <AddIcon fontSize='small' />
         </IconButton>
 
         <Typography variant='body1' fontSize={18}>
-          total price
+          {(cartItem.quantity * cartItem.price).toFixed(2)}
         </Typography>
       </Grid>
     </Grid>
