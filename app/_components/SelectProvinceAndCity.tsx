@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
@@ -17,11 +16,11 @@ export default function SelectProvinceAndCity() {
 
   return (
     <>
-      <FormControl fullWidth margin='dense' variant='outlined' required>
-        <InputLabel id='province'>استان</InputLabel>
+      <FormControl fullWidth margin="dense" variant="outlined" required>
+        <InputLabel id="province">استان</InputLabel>
         <Select
-          id='province'
-          label='استان'
+          id="province"
+          label="استان"
           value={provinceId}
           onChange={e => setProvinceId(String(e.target.value))}
         >
@@ -32,11 +31,11 @@ export default function SelectProvinceAndCity() {
           ))}
         </Select>
       </FormControl>
-      <FormControl fullWidth margin='dense' variant='outlined' required>
-        <InputLabel id='city'>شهرستان</InputLabel>
+      <FormControl fullWidth margin="dense" variant="outlined" required>
+        <InputLabel id="city">شهرستان</InputLabel>
         <Select
-          id='city'
-          label='شهرستان'
+          id="city"
+          label="شهرستان"
           value={cityId}
           onChange={e => setCityId(String(e.target.value))}
         >

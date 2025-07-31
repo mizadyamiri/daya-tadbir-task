@@ -1,0 +1,39 @@
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import allProvinces from "@/app/_libs/allProvinces.json";
+import { Controller } from "react-hook-form";
+import { FormInputProps } from "./CheckoutForm";
+
+export default function SelectProvince({ name, label, control }: FormInputProps) {
+  return (
+    <Controller
+      name={name}
+      control={control}
+      rules={{ required: true, min: 1 }}
+      render={renderProps => (
+        <FormControl
+          fullWidth
+          margin="dense"
+          variant="outlined"
+          error={!!renderProps.fieldState.error}
+        >
+          <InputLabel id="province">{label}</InputLabel>
+          <Select
+            id={name}
+            label={label}
+            value={renderProps.field.value}
+            onChange={renderProps.field.onChange}
+          >
+            {allProvinces.map(province => (
+              <MenuItem key={province.id} value={province.id}>
+                {province.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      )}
+    />
+  );
+}
