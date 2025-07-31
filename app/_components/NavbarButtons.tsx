@@ -17,14 +17,14 @@ export default function NavbarButtons({ session }: { session: string | null }) {
         <MuiLink href='/cart'>
           <IconButton size='large'>
             <Badge badgeContent={total} color='error'>
-              <LocalMallOutlinedIcon color='secondary' />
+              <LocalMallOutlinedIcon color='primary' />
             </Badge>
           </IconButton>
         </MuiLink>
       ) : (
         <MuiLink href='/login'>
           <IconButton size='large'>
-            <AccountCircleOutlinedIcon color='secondary' />
+            <AccountCircleOutlinedIcon color='primary' />
           </IconButton>
         </MuiLink>
       )}

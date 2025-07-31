@@ -7,9 +7,9 @@ const theme = createTheme(
   {
     palette: {
       mode: "light",
-      primary: { main: "#72AEC8" },
-      secondary: { main: "#272727" },
-      background: { default: "#edf1f3" },
+      primary: { main: "#0a0a0a" },
+      secondary: { main: "#ededed" },
+      background: { default: "#ededed" },
     },
     typography: {
       fontFamily: "var(--font-yekan)",

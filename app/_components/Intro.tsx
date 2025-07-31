@@ -35,8 +35,7 @@ export default function Header() {
               sx={{
                 fontWeight: 300,
                 fontSize: { lg: "80px", xs: "70px" },
-                color: "secondary.main",
-                textTransform: "uppercase",
+                color: "primary.main",
               }}
             >
               الان بخر
@@ -45,7 +44,7 @@ export default function Header() {
             <Link href='products/14'>
               <Button
                 variant='contained'
-                color='secondary'
+                color='primary'
                 sx={{
                   width: "225px",
                   height: "55px",
