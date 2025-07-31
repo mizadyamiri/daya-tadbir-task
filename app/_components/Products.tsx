@@ -1,4 +1,3 @@
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -17,12 +16,6 @@ export default function Products() {
           sx={{ width: 1 }}
         >
           <Typography sx={{ fontSize: 24, fontWeight: 400 }}>کالا ها</Typography>
-          <Stack direction='column' spacing={0} sx={{ cursor: "pointer" }}>
-            <Button sx={{ fontSize: 18, fontWeight: 400, textTransform: "uppercase" }}>
-              مشاهده همه
-            </Button>
-            {/* <Box sx={{ width: 1, height: 1, backgroundColor: "#E1E1E1" }} /> */}
-          </Stack>
         </Stack>
 
         <Suspense fallback={<ProductListSkeleton />}>

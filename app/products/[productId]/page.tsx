@@ -63,11 +63,11 @@ export default async function Page({
             </Typography>
           </Box>
           <Box>
-            <Typography sx={{ fontSize: 24, color: "green", textAlign: "left" }}>
+            <Typography sx={{ fontSize: 24, color: "green", textAlign: "left", mb: 5 }}>
               {commafy(product.price)} تومان
             </Typography>
 
-            <CartButton session={session} product={product} />
+            <CartButton session={session} product={product} width='100%' />
           </Box>
         </CardContent>
 
