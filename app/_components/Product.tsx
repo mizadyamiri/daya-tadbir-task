@@ -10,12 +10,12 @@ import MuiLink from "./MuiLink";
 import commafy from "@/app/_libs/utiles";
 import CartButton from "./CartButton";
 
-interface propType {
+interface Props {
   product: IProduct;
   session: string | null;
 }
 
-export default function Product({ product, session }: propType) {
+export default function Product({ product, session }: Props) {
   return (
     <Grid size={1} key={product.id}>
       <Card
