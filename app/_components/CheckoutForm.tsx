@@ -1,12 +1,14 @@
 "use client";
 
-import SelectProvince from "@/app/_components/SelectProvince";
 import { Control, Path, useForm } from "react-hook-form";
+import { LatLngExpression } from "leaflet";
+import SelectProvince from "@/app/_components/SelectProvince";
+import SelectCity from "./SelectCity";
+import Map from "./map";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import TextInput from "./TextInput";
-import SelectCity from "./SelectCity";
 
 interface FormValues {
   firstname: string;
@@ -14,8 +16,9 @@ interface FormValues {
   mobile: string;
   postalnum: string;
   address: string;
-  province: number;
-  city: number;
+  province: number | "";
+  city: number | "";
+  coords: LatLngExpression;
 }
 
 export interface FormInputProps {
@@ -24,22 +27,27 @@ export interface FormInputProps {
   label: string;
 }
 
-const defaultValues = {
+const defaultValues: FormValues = {
   firstname: "",
   lastname: "",
   mobile: "",
   postalnum: "",
   address: "",
-  province: 0,
-  city: 0,
+  province: "",
+  city: "",
+  coords: [35.71, 51.4],
 };
 
 export default function CheckoutForm() {
-  const { handleSubmit, control, watch } = useForm<FormValues>({
+  const { handleSubmit, control, watch, reset } = useForm<FormValues>({
     defaultValues,
   });
-
   const provinceId = watch("province");
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+    reset();
+  };
 
   return (
     <Paper
@@ -56,16 +64,20 @@ export default function CheckoutForm() {
         تکمیل خرید
       </Typography>
 
-      <form onSubmit={handleSubmit(data => console.log(data))}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <TextInput name="firstname" label="نام" control={control} />
         <TextInput name="lastname" label="نام خانوادگی" control={control} />
         <TextInput name="mobile" label="موبایل" control={control} />
         <TextInput name="postalnum" label="کد پستی" control={control} />
-
         <SelectProvince name="province" label="استان" control={control} />
-        <SelectCity name="city" label="شهر" control={control} provinceId={provinceId} />
-
+        <SelectCity
+          name="city"
+          label="شهر"
+          control={control}
+          provinceId={provinceId as number}
+        />
         <TextInput name="address" label="آدرس" control={control} />
+        <Map name="coords" label="نقشه" control={control} />
 
         <Button type="submit" variant="contained" fullWidth sx={{ fontSize: 18, mt: 5 }}>
           پرداخت
