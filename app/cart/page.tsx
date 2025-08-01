@@ -13,6 +13,7 @@ export default function Page() {
       sx={{
         py: 2,
         my: 6,
+        minHeight: 'calc(100vh - 480px)',
       }}
     >
       <CartList />

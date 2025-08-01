@@ -8,7 +8,7 @@ export default function Loading() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: 'calc(100vh - 570px)',
+        minHeight: 'calc(100vh - 425px)',
       }}
     >
       <CircularProgress />
