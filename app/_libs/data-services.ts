@@ -9,11 +9,11 @@ export interface Product {
 
 export async function getProducts(): Promise<Product[]> {
   try {
-    const res = await fetch("https://fakestoreapi.com/products");
+    const res = await fetch('https://fakestoreapi.com/products');
     if (!res.ok) throw new Error(`${res.status}, ${res.statusText}`);
 
     const data = await res.json();
-    return data.filter((p: Product) => p.category === "electronics");
+    return data.filter((p: Product) => p.category === 'electronics');
   } catch (err) {
     console.error(err);
     throw err;

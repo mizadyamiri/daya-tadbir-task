@@ -1,10 +1,10 @@
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import allCities from "@/app/_libs/allCities.json";
-import { FormInputProps } from "./CheckoutForm";
-import { Controller } from "react-hook-form";
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import allCities from '@/app/_libs/allCities.json';
+import { FormInputProps } from './CheckoutForm';
+import { Controller } from 'react-hook-form';
 
 interface PropType extends FormInputProps {
   provinceId: number;
@@ -12,7 +12,7 @@ interface PropType extends FormInputProps {
 
 export default function SelectCity({ provinceId, name, label, control }: PropType) {
   const selectedProvinceCities = allCities.filter(
-    city => city.province_id === provinceId
+    city => city.province_id === provinceId,
   );
 
   return (

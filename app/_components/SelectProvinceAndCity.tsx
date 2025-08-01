@@ -1,17 +1,17 @@
-import { useState } from "react";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import allProvinces from "@/app/_libs/allProvinces.json";
-import allCities from "@/app/_libs/allCities.json";
+import { useState } from 'react';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import allProvinces from '@/app/_libs/allProvinces.json';
+import allCities from '@/app/_libs/allCities.json';
 
 export default function SelectProvinceAndCity() {
-  const [provinceId, setProvinceId] = useState<string>("");
-  const [cityId, setCityId] = useState<string>("");
+  const [provinceId, setProvinceId] = useState<string>('');
+  const [cityId, setCityId] = useState<string>('');
 
   const selectedProvinceCities = allCities.filter(
-    city => city.province_id.toString() === provinceId
+    city => city.province_id.toString() === provinceId,
   );
 
   return (

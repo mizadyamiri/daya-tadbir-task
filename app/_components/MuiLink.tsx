@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Link as Mlink } from "@mui/material";
+import Link from 'next/link';
+import { Link as Mlink } from '@mui/material';
 
 function MuiLink({
   children,
@@ -9,7 +9,7 @@ function MuiLink({
   href: string;
 }>) {
   return (
-    <Mlink sx={{ textDecoration: "none" }} component={Link} href={href}>
+    <Mlink sx={{ textDecoration: 'none' }} component={Link} href={href}>
       {children}
     </Mlink>
   );

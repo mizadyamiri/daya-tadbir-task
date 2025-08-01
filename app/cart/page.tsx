@@ -1,15 +1,15 @@
-import { Metadata } from "next";
-import Container from "@mui/material/Container";
-import CartList from "../_components/CartList";
+import { Metadata } from 'next';
+import Container from '@mui/material/Container';
+import CartList from '../_components/CartList';
 
 export const metadata: Metadata = {
-  title: "سبد خرید",
+  title: 'سبد خرید',
 };
 
 export default function Page() {
   return (
     <Container
-      maxWidth='lg'
+      maxWidth="lg"
       sx={{
         py: 2,
         my: 6,

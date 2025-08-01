@@ -1,6 +1,6 @@
-import { Controller } from "react-hook-form";
-import TextField from "@mui/material/TextField";
-import { FormInputProps } from "./CheckoutForm";
+import { Controller } from 'react-hook-form';
+import TextField from '@mui/material/TextField';
+import { FormInputProps } from './CheckoutForm';
 
 export default function TextInput({ name, label, control }: FormInputProps) {
   return (

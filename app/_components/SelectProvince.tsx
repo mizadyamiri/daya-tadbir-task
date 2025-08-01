@@ -1,10 +1,10 @@
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import allProvinces from "@/app/_libs/allProvinces.json";
-import { Controller } from "react-hook-form";
-import { FormInputProps } from "./CheckoutForm";
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import allProvinces from '@/app/_libs/allProvinces.json';
+import { Controller } from 'react-hook-form';
+import { FormInputProps } from './CheckoutForm';
 
 export default function SelectProvince({ name, label, control }: FormInputProps) {
   return (

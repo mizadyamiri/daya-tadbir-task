@@ -1,11 +1,11 @@
-import Box from "@mui/material/Box";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
-import { FormInputProps } from "./CheckoutForm";
-import { Controller } from "react-hook-form";
-import { LatLngExpression } from "leaflet";
+import Box from '@mui/material/Box';
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import 'leaflet-defaulticon-compatibility';
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
+import { FormInputProps } from './CheckoutForm';
+import { Controller } from 'react-hook-form';
+import { LatLngExpression } from 'leaflet';
 
 export default function Map({ name, control }: FormInputProps) {
   return (
@@ -16,20 +16,20 @@ export default function Map({ name, control }: FormInputProps) {
       render={renderProps => (
         <Box
           sx={{
-            width: "100%",
+            width: '100%',
             height: 200,
             border: 1,
             borderRadius: 1,
-            borderColor: "grey.500",
+            borderColor: 'grey.500',
             mt: 1,
-            bgcolor: "tomato",
+            bgcolor: 'tomato',
           }}
         >
           <MapContainer
             center={[35.71, 51.4]}
             zoom={11}
             scrollWheelZoom={true}
-            style={{ height: "100%" }}
+            style={{ height: '100%' }}
             attributionControl={false}
           >
             <TileLayer

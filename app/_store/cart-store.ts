@@ -1,5 +1,5 @@
-import { Product } from "@/app/_libs/data-services";
-import { createStore } from "zustand/vanilla";
+import { Product } from '@/app/_libs/data-services';
+import { createStore } from 'zustand/vanilla';
 
 export interface CartItem extends Product {
   quantity: number;
@@ -32,7 +32,7 @@ export const createCartStore = (initState: CartState = defaultInitState) => {
         if (existing) {
           return {
             items: state.items.map(i =>
-              i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
+              i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i,
             ),
           };
         }
@@ -44,7 +44,7 @@ export const createCartStore = (initState: CartState = defaultInitState) => {
         return {
           items: state.items
             .map(item =>
-              item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+              item.id === id ? { ...item, quantity: item.quantity - 1 } : item,
             )
             .filter(item => item.quantity > 0),
         };

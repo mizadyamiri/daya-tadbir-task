@@ -1,54 +1,54 @@
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Link from "next/link";
-import monitor from "@/public/images/samsung-monitor-transparent.png";
-import Image from "next/image";
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Link from 'next/link';
+import monitor from '@/public/images/samsung-monitor-transparent.png';
+import Image from 'next/image';
 
 export default function Header() {
   return (
     <Box
       sx={{
-        bgcolor: "#fff",
+        bgcolor: '#fff',
         width: 1,
-        display: "flex",
-        alignItems: "center",
+        display: 'flex',
+        alignItems: 'center',
         py: 6,
       }}
     >
-      <Container maxWidth='lg' sx={{ padding: { lg: "0px !important" } }}>
+      <Container maxWidth="lg" sx={{ padding: { lg: '0px !important' } }}>
         <Stack
-          direction={{ xs: "column-reverse", md: "row" }}
+          direction={{ xs: 'column-reverse', md: 'row' }}
           gap={4}
-          alignItems='center'
-          justifyContent={"space-between"}
+          alignItems="center"
+          justifyContent={'space-between'}
         >
           <Stack
-            direction='column'
-            alignItems={{ md: "start", xs: "center" }}
+            direction="column"
+            alignItems={{ md: 'start', xs: 'center' }}
             spacing={2.5}
-            sx={{ textAlign: { md: "unset", xs: "center" } }}
+            sx={{ textAlign: { md: 'unset', xs: 'center' } }}
           >
             <Typography
               sx={{
                 fontWeight: 300,
-                fontSize: { lg: "80px", xs: "70px" },
-                color: "primary.main",
+                fontSize: { lg: '80px', xs: '70px' },
+                color: 'primary.main',
               }}
             >
               الان بخر
               <br /> بعدا پرداخت کن
             </Typography>
-            <Link href='products/14'>
+            <Link href="products/14">
               <Button
-                variant='contained'
-                color='primary'
+                variant="contained"
+                color="primary"
                 sx={{
-                  width: "225px",
-                  height: "55px",
-                  letterSpacing: "1px",
+                  width: '225px',
+                  height: '55px',
+                  letterSpacing: '1px',
                   fontSize: 13.5,
                 }}
               >
@@ -56,12 +56,12 @@ export default function Header() {
               </Button>
             </Link>
           </Stack>
-          <Box sx={{ width: { xs: 1, md: 1 / 2 }, display: "block" }}>
+          <Box sx={{ width: { xs: 1, md: 1 / 2 }, display: 'block' }}>
             <Image
               src={monitor}
-              placeholder='empty'
-              alt='samsung oled monitor'
-              style={{ width: "100%", height: "auto" }}
+              placeholder="empty"
+              alt="samsung oled monitor"
+              style={{ width: '100%', height: 'auto' }}
             />
           </Box>
         </Stack>

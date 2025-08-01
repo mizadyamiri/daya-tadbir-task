@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
-import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
-import samsngMonitorImage from "@/public/images/samsung-monitor.jpg";
-import wdHDDImage from "@/public/images/wd-hard.jpg";
-import spSSDImage from "@/public/images/sp-ssd.jpg";
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import samsngMonitorImage from '@/public/images/samsung-monitor.jpg';
+import wdHDDImage from '@/public/images/wd-hard.jpg';
+import spSSDImage from '@/public/images/sp-ssd.jpg';
 
 const Images = [
   { imageData: samsngMonitorImage, id: 14 },
@@ -19,11 +19,11 @@ const Images = [
 ];
 
 const buttonsSharedStyles = {
-  ":hover": { bgcolor: "#11111147" },
-  position: "absolute",
-  top: "0",
-  bottom: "0",
-  borderRadius: "16px",
+  ':hover': { bgcolor: '#11111147' },
+  position: 'absolute',
+  top: '0',
+  bottom: '0',
+  borderRadius: '16px',
 };
 
 export default function Slider() {
@@ -50,21 +50,21 @@ export default function Slider() {
   }, [imageIndex]);
 
   return (
-    <Container maxWidth='lg' sx={{ padding: { lg: "0px !important" }, my: 6 }}>
+    <Container maxWidth="lg" sx={{ padding: { lg: '0px !important' }, my: 6 }}>
       <Box
         sx={{
           width: 1,
-          aspectRatio: "16 / 9",
-          position: "relative",
+          aspectRatio: '16 / 9',
+          position: 'relative',
         }}
       >
-        <Box sx={{ display: "flex", width: 1, height: 1, overflow: "hidden" }}>
+        <Box sx={{ display: 'flex', width: 1, height: 1, overflow: 'hidden' }}>
           {Images.map(img => (
             <Link
               href={`/products/${img.id}`}
               key={img.imageData.src}
               style={{
-                transition: "translate 300ms ease-out",
+                transition: 'translate 300ms ease-out',
                 translate: `${100 * imageIndex}%`,
                 flexShrink: 0,
                 flexGrow: 0,
@@ -72,23 +72,23 @@ export default function Slider() {
             >
               <Image
                 style={{
-                  width: "100%",
-                  height: "100%",
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
                 }}
-                objectFit='contain'
                 src={img.imageData}
-                placeholder='blur'
-                alt=''
+                placeholder="blur"
+                alt=""
               />
             </Link>
           ))}
         </Box>
 
-        <Button sx={{ ...buttonsSharedStyles, left: "0" }} onClick={handlePrevImage}>
-          <ArrowBackIosOutlinedIcon fontSize='small' />
+        <Button sx={{ ...buttonsSharedStyles, left: '0' }} onClick={handlePrevImage}>
+          <ArrowBackIosOutlinedIcon fontSize="small" />
         </Button>
-        <Button sx={{ ...buttonsSharedStyles, right: "0" }} onClick={handleNextImage}>
-          <ArrowForwardIosOutlinedIcon fontSize='small' />
+        <Button sx={{ ...buttonsSharedStyles, right: '0' }} onClick={handleNextImage}>
+          <ArrowForwardIosOutlinedIcon fontSize="small" />
         </Button>
       </Box>
     </Container>

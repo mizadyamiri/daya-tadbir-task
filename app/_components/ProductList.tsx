@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useQuery } from "@tanstack/react-query";
-import { getProducts, Product as IProduct } from "../_libs/data-services";
-import Grid from "@mui/material/Grid";
-import Product from "./Product";
+import { useQuery } from '@tanstack/react-query';
+import { getProducts, Product as IProduct } from '../_libs/data-services';
+import Grid from '@mui/material/Grid';
+import Product from './Product';
 
 interface Props {
   products: IProduct[];
@@ -12,7 +12,7 @@ interface Props {
 
 export default function ProductList({ products, session }: Props) {
   const { data } = useQuery({
-    queryKey: ["products"],
+    queryKey: ['products'],
     queryFn: getProducts,
     initialData: products,
   });

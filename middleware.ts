@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
 // 1. Specify protected and public routes
-const protectedRoutes = ["/checkout", "/cart"];
-const publicRoutes = ["/login", "signup"];
+const protectedRoutes = ['/checkout', '/cart'];
+const publicRoutes = ['/login', 'signup'];
 
 export default async function middleware(req: NextRequest) {
   // 2. Check if the current route is protected or public
@@ -11,16 +11,16 @@ export default async function middleware(req: NextRequest) {
   const isPublicRoute = publicRoutes.includes(path);
 
   // 3. get the session from the cookie
-  const session = req.cookies.get("session")?.value;
+  const session = req.cookies.get('session')?.value;
 
   // 4. Redirect to /login if the user is not authenticated
   if (isProtectedRoute && !session) {
-    return NextResponse.redirect(new URL("/login", req.nextUrl));
+    return NextResponse.redirect(new URL('/login', req.nextUrl));
   }
 
   // 5. Redirect to / if the user is authenticated
   if (isPublicRoute && session) {
-    return NextResponse.redirect(new URL("/", req.nextUrl));
+    return NextResponse.redirect(new URL('/', req.nextUrl));
   }
 
   return NextResponse.next();
@@ -28,5 +28,5 @@ export default async function middleware(req: NextRequest) {
 
 // Routes Middleware should not run on
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|.*\\.png$).*)"],
+  matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
 };

@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { Control, Path, useForm } from "react-hook-form";
-import { LatLngExpression } from "leaflet";
-import SelectProvince from "@/app/_components/SelectProvince";
-import SelectCity from "./SelectCity";
-import Map from "./map";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import TextInput from "./TextInput";
+import { Control, Path, useForm } from 'react-hook-form';
+import { LatLngExpression } from 'leaflet';
+import SelectProvince from '@/app/_components/SelectProvince';
+import SelectCity from './SelectCity';
+import Map from './map';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import TextInput from './TextInput';
 
 interface FormValues {
   firstname: string;
@@ -16,8 +16,8 @@ interface FormValues {
   mobile: string;
   postalnum: string;
   address: string;
-  province: number | "";
-  city: number | "";
+  province: number | '';
+  city: number | '';
   coords: LatLngExpression;
 }
 
@@ -28,13 +28,13 @@ export interface FormInputProps {
 }
 
 const defaultValues: FormValues = {
-  firstname: "",
-  lastname: "",
-  mobile: "",
-  postalnum: "",
-  address: "",
-  province: "",
-  city: "",
+  firstname: '',
+  lastname: '',
+  mobile: '',
+  postalnum: '',
+  address: '',
+  province: '',
+  city: '',
   coords: [35.71, 51.4],
 };
 
@@ -42,7 +42,7 @@ export default function CheckoutForm() {
   const { handleSubmit, control, watch, reset } = useForm<FormValues>({
     defaultValues,
   });
-  const provinceId = watch("province");
+  const provinceId = watch('province');
 
   const onSubmit = (data: FormValues) => {
     console.log(data);
@@ -53,10 +53,10 @@ export default function CheckoutForm() {
     <Paper
       elevation={8}
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
         p: 4,
       }}
     >
