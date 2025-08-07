@@ -50,7 +50,7 @@ export default function Slider() {
   }, [imageIndex]);
 
   return (
-    <Container maxWidth="lg" sx={{ padding: { lg: '0px !important' }, my: 6 }}>
+    <Container maxWidth="lg" sx={{ padding: { lg: '0px  ' }, my: 6 }}>
       <Box
         sx={{
           width: 1,

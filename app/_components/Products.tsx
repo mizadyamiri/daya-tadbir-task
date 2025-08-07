@@ -12,7 +12,7 @@ export default async function Products() {
   const session = await getSession();
 
   return (
-    <Container maxWidth="lg" sx={{ padding: { lg: '0px !important' }, my: 6 }}>
+    <Container maxWidth="lg" sx={{ padding: { lg: '0px  ' }, my: 6 }}>
       <Stack direction="column" spacing={3} sx={{ width: 1 }}>
         <Stack
           direction="row"

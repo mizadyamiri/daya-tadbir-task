@@ -8,7 +8,10 @@ import Skeleton from '@mui/material/Skeleton';
 
 export default function Loading() {
   return (
-    <Container maxWidth="lg" sx={{ padding: { lg: '0px !important' }, mt: 6 }}>
+    <Container
+      maxWidth="lg"
+      sx={{ padding: { lg: '0px  ' }, mt: 6, minHeight: 'calc(100vh - 500px)' }}
+    >
       <Card
         sx={{
           display: 'flex',

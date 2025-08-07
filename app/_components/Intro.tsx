@@ -18,7 +18,7 @@ export default function Header() {
         py: 6,
       }}
     >
-      <Container maxWidth="lg" sx={{ padding: { lg: '0px !important' } }}>
+      <Container maxWidth="lg" sx={{ padding: { lg: '0px  ' } }}>
         <Stack
           direction={{ xs: 'column-reverse', md: 'row' }}
           gap={4}

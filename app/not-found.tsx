@@ -10,12 +10,17 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <Stack alignItems="center" gap={5} sx={{ my: 15, minHeight: 'calc(100vh - 570px)' }}>
+    <Stack alignItems="center" gap={5} sx={{ my: 15, minHeight: 'calc(100vh - 500px)' }}>
       <Typography sx={{ fontSize: { xs: 50, md: 60 }, textAlign: 'center' }} variant="h1">
         صفحه‌ای که دنبال آن بودید پیدا نشد!
       </Typography>
 
-      <Button sx={{ letterSpacing: 1, fontSize: 20 }} component={Link} href="/">
+      <Button
+        color="info"
+        sx={{ letterSpacing: 1, fontSize: 20 }}
+        component={Link}
+        href="/"
+      >
         صفحه اصلی
       </Button>
     </Stack>

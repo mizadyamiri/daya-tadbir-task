@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Container maxWidth="xs" sx={{ padding: { lg: '0px !important' }, my: 6 }}>
+    <Container maxWidth="xs" sx={{ padding: { lg: '0px  ' }, my: 6 }}>
       <form action={signInAction}>
         <Paper
           elevation={8}

@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 
 import Navbar from '@/app/_components/NavBar';
 import Footer from '@/app/_components/Footer';
+import Box from '@mui/material/Box';
 import { CartStoreProvider } from './_store/cart-store-provider';
 import QueryProvider from './_components/QueryProvider';
 
@@ -37,7 +38,9 @@ export default function RootLayout({
               <CartStoreProvider>
                 <Navbar />
 
-                <main>{children}</main>
+                <main>
+                  <Box sx={{ mt: 15 }}>{children}</Box>
+                </main>
 
                 <Footer />
               </CartStoreProvider>

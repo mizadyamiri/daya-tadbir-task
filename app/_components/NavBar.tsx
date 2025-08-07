@@ -12,7 +12,7 @@ export default async function Navbar() {
 
   return (
     <AppBar position="fixed" color="secondary">
-      <Container maxWidth="lg" sx={{ padding: { lg: '0px !important' } }}>
+      <Container maxWidth="lg" sx={{ padding: { lg: '0px  ' } }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <MuiLink href="/">
             <Image
