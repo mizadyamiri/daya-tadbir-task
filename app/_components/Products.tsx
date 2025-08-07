@@ -24,7 +24,7 @@ export default async function Products() {
         </Stack>
 
         <Suspense fallback={<ProductListSkeleton />}>
-          <ProductList products={products} session={session} />
+          <ProductList preFetchedProducts={products} session={session} />
         </Suspense>
       </Stack>
     </Container>
