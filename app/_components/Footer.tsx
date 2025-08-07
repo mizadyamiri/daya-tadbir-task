@@ -71,7 +71,7 @@ export default function Footer() {
             />
           </Stack>
         </Stack>
-        <Stack direction="column" spacing={1}>
+        <Stack direction="column" spacing={1} flexShrink={0}>
           <Typography
             sx={{
               maxWidth: '200px',
@@ -101,7 +101,7 @@ export default function Footer() {
             );
           })}
         </Stack>
-        <Stack direction="column" spacing={1}>
+        <Stack direction="column" spacing={1} flexShrink={0}>
           <Typography
             sx={{
               maxWidth: '200px',
@@ -131,7 +131,7 @@ export default function Footer() {
             );
           })}
         </Stack>
-        <Stack direction={'column'} spacing={1}>
+        <Stack direction={'column'} spacing={1} flexShrink={0}>
           <Typography
             sx={{
               maxWidth: '200px',
