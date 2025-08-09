@@ -1,7 +1,6 @@
 'use client';
 
 import { Control, Path, useForm } from 'react-hook-form';
-import { LatLngExpression } from 'leaflet';
 import SelectProvince from '@/app/_components/SelectProvince';
 import SelectCity from './SelectCity';
 import Map from './map';
@@ -20,7 +19,7 @@ interface FormValues {
   address: string;
   province: number | '';
   city: number | '';
-  coords: LatLngExpression;
+  coords: object;
 }
 
 export interface FormInputProps {

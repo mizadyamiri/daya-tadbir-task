@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import allCities from '@/app/_libs/allCities.json';
 import { FormInputProps } from './CheckoutForm';
 import { Controller } from 'react-hook-form';
+import FormHelperText from '@mui/material/FormHelperText';
 
 interface PropType extends FormInputProps {
   provinceId: number;
@@ -19,7 +20,7 @@ export default function SelectCity({ provinceId, name, label, control }: PropTyp
     <Controller
       name={name}
       control={control}
-      rules={{ required: true, min: 1 }}
+      rules={{ required: `${label} ضروریست  `, min: 1 }}
       render={renderProps => (
         <FormControl
           fullWidth
@@ -40,6 +41,7 @@ export default function SelectCity({ provinceId, name, label, control }: PropTyp
               </MenuItem>
             ))}
           </Select>
+          <FormHelperText>{renderProps.formState.errors[name]?.message}</FormHelperText>
         </FormControl>
       )}
     />
