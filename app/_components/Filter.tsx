@@ -6,11 +6,11 @@ import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const filterList = [
-  { lable: 'همه', value: 'all' },
-  { lable: 'جواهرات', value: 'jewelery' },
-  { lable: 'الکترونیکی', value: 'electronics' },
-  { lable: 'لباس مردانه', value: "men's clothing" },
   { lable: 'لباس زنانه', value: "women's clothing" },
+  { lable: 'لباس مردانه', value: "men's clothing" },
+  { lable: 'الکترونیکی', value: 'electronics' },
+  { lable: 'جواهرات', value: 'jewelery' },
+  { lable: 'همه', value: 'all' },
 ];
 
 export default function Filter() {
@@ -22,6 +22,7 @@ export default function Filter() {
 
   const handleChange = (filter: string) => {
     const params = new URLSearchParams(searchParams);
+    params.delete('page');
 
     params.set('filter', filter);
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
@@ -29,7 +30,16 @@ export default function Filter() {
   };
 
   return (
-    <ToggleButtonGroup color="primary" value={filter} exclusive aria-label="category">
+    <ToggleButtonGroup
+      sx={{ direction: 'ltr' }}
+      color="primary"
+      value={filter}
+      exclusive
+      aria-label="category"
+      onChange={props => {
+        console.log(props);
+      }}
+    >
       {filterList.map(item => (
         <ToggleButton
           onClick={() => handleChange(item.value)}
