@@ -43,21 +43,21 @@ export default function CartItem({ cartItem }: { cartItem: CartItemProps }) {
 
       <Grid size={'auto'} sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
         <Typography variant="body1" fontSize={18} color="green">
-          {cartItem.price}
+          {cartItem.price.toLocaleString('fa-IR')}
         </Typography>
 
         <IconButton onClick={() => removeItem(cartItem.id)} size="small">
           <RemoveIcon fontSize="small" />
         </IconButton>
         <Typography variant="body1" fontSize={18}>
-          {cartItem.quantity}
+          {cartItem.quantity.toLocaleString('fa-IR')}
         </Typography>
         <IconButton onClick={handleAddItem} size="small">
           <AddIcon fontSize="small" />
         </IconButton>
 
         <Typography variant="body1" fontSize={18}>
-          {(cartItem.quantity * cartItem.price).toFixed(2)}
+          {(cartItem.quantity * cartItem.price).toLocaleString('fa-IR')}
         </Typography>
       </Grid>
     </Grid>

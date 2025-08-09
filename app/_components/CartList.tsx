@@ -35,7 +35,7 @@ export default function CartList() {
 
       <MuiLink href="/checkout">
         <Button variant="contained" size="large" sx={{ width: { xs: '100%', md: 220 } }}>
-          ثبت نهایی ({totalPrice.toFixed(2)} تومان)
+          ثبت نهایی ({totalPrice.toLocaleString('fa-IR')} تومان)
         </Button>
       </MuiLink>
     </Paper>

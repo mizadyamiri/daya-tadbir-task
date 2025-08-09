@@ -10,13 +10,14 @@ import { useCartStore } from '../_store/cart-store-provider';
 export default function NavbarButtons({ session }: { session: string | null }) {
   const { items } = useCartStore(state => state);
   const total = items.reduce((total, item) => (total += item.quantity), 0);
+  const totalFa = total === 0 ? 0 : total.toLocaleString('fa-IR');
 
   return (
     <>
       {session ? (
         <MuiLink href="/cart">
           <IconButton size="large">
-            <Badge badgeContent={total} color="error">
+            <Badge badgeContent={totalFa} color="error">
               <LocalMallOutlinedIcon color="primary" />
             </Badge>
           </IconButton>

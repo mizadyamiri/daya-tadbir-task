@@ -7,7 +7,6 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 import MuiLink from './MuiLink';
-import commafy from '@/app/_libs/utiles';
 import CartButton from './CartButton';
 
 interface Props {
@@ -55,7 +54,7 @@ export default function Product({ product, session }: Props) {
             sx={{ mt: 4 }}
           >
             <Typography variant="body1" sx={{ color: 'green', textAlign: 'left' }}>
-              {commafy(product.price)} تومان
+              {product.price.toLocaleString('fa-IR')} تومان
             </Typography>
             {session ? (
               <CartButton product={product} session={session} width="auto" />
