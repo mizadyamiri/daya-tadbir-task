@@ -5,6 +5,7 @@ import { faIR } from '@mui/material/locale';
 
 const theme = createTheme(
   {
+    direction: 'rtl',
     palette: {
       mode: 'light',
       primary: { main: '#0a0a0a' },

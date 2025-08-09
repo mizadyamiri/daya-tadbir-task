@@ -1,3 +1,6 @@
+import createCache from '@emotion/cache';
+import rtlPlugin from '@mui/stylis-plugin-rtl';
+
 export default function commafy(num: number): string {
   const str = num.toString().split('.');
   if (str[0].length >= 5) {
@@ -8,3 +11,8 @@ export default function commafy(num: number): string {
   }
   return str.join('.');
 }
+
+export const rtlCache = createCache({
+  key: 'muirtl',
+  stylisPlugins: [rtlPlugin],
+});
