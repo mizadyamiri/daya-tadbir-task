@@ -4,6 +4,7 @@ import { Product as IProduct } from '../_libs/data-services';
 import Grid from '@mui/material/Grid';
 import Product from './Product';
 import useProducts from '../products/useProducts';
+import { useSearchParams } from 'next/navigation';
 
 interface Props {
   preFetchedProducts: IProduct[];
@@ -12,10 +13,15 @@ interface Props {
 
 export default function ProductList({ preFetchedProducts, session }: Props) {
   const { products } = useProducts(preFetchedProducts);
+  const searchParams = useSearchParams();
+
+  const filter = searchParams.get('filter') ?? 'all';
+  const filteredProducts =
+    filter === 'all' ? products : products.filter(product => product.category === filter);
 
   return (
     <Grid container spacing={2} columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
-      {products.map(product => (
+      {filteredProducts.map(product => (
         <Product product={product} session={session} key={product.id} />
       ))}
     </Grid>

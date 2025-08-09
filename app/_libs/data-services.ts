@@ -13,7 +13,7 @@ export async function getProducts(): Promise<Product[]> {
     if (!res.ok) throw new Error(`${res.status}, ${res.statusText}`);
 
     const data = await res.json();
-    return data.filter((p: Product) => p.category === 'electronics');
+    return data;
   } catch (err) {
     console.error(err);
     throw err;

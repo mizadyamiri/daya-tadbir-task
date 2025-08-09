@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ProductListSkeleton from '@/app/_components/ProductListSkeleton';
+import Filter from './Filter';
 
 export default async function Products() {
   const products = await getProducts();
@@ -15,12 +16,14 @@ export default async function Products() {
     <Container maxWidth="lg" sx={{ padding: { lg: '0px  ' }, my: 6 }}>
       <Stack direction="column" spacing={3} sx={{ width: 1 }}>
         <Stack
-          direction="row"
+          direction={{ md: 'row', xs: 'column' }}
           alignItems={'center'}
           justifyContent={'space-between'}
           sx={{ width: 1 }}
         >
           <Typography sx={{ fontSize: 24, fontWeight: 400 }}>کالا ها</Typography>
+
+          <Filter />
         </Stack>
 
         <Suspense fallback={<ProductListSkeleton />}>
