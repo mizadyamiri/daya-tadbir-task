@@ -2,8 +2,9 @@
 
 import Button from '@mui/material/Button';
 import MuiLink from '@/app/_components/MuiLink';
-import { useCartStore } from '@/app/_store/cart-store-provider';
+import { useAppSelector, useAppDispatch } from '../_store/hooks';
 import { Product } from '@/app/_libs/data-services';
+import { addItem } from '../_store/cartSlice';
 
 interface Props {
   session: string | null;
@@ -12,14 +13,18 @@ interface Props {
 }
 
 export default function CartButton({ session, product, width }: Props) {
-  const { items, addItem } = useCartStore(state => state);
+  const { items } = useAppSelector(state => state.cart);
+  const dispatch = useAppDispatch();
+
   const cartItem = items.find(i => i.id === product.id);
 
   const handleAddItem = () => {
-    addItem({
-      ...product,
-      quantity: 1,
-    });
+    dispatch(
+      addItem({
+        ...product,
+        quantity: 1,
+      }),
+    );
   };
 
   if (!session)

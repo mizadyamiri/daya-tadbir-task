@@ -1,6 +1,6 @@
 'use client';
 
-import { useCartStore } from '@/app/_store/cart-store-provider';
+import { useAppSelector } from '../_store/hooks';
 import CartItem from '@/app/_components/CartItem';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 import MuiLink from './MuiLink';
 
 export default function CartList() {
-  const { items } = useCartStore(state => state);
+  const { items } = useAppSelector(state => state.cart);
   const totalPrice = items.reduce(
     (total, item) => (total += item.price * item.quantity),
     0,

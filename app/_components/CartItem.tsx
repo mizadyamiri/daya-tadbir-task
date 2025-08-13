@@ -4,14 +4,14 @@ import IconButton from '@mui/material/IconButton';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import Image from 'next/image';
-import { CartItem as CartItemProps } from '@/app/_store/cart-store';
-import { useCartStore } from '@/app/_store/cart-store-provider';
+import { addItem, CartItem as CartItemProps, removeItem } from '@/app/_store/cartSlice';
+import { useAppDispatch } from '../_store/hooks';
 
 export default function CartItem({ cartItem }: { cartItem: CartItemProps }) {
-  const { addItem, removeItem } = useCartStore(state => state);
+  const dispatch = useAppDispatch();
 
   const handleAddItem = () => {
-    addItem({ ...cartItem, quantity: 1 });
+    dispatch(addItem({ ...cartItem, quantity: 1 }));
   };
 
   return (
@@ -46,7 +46,7 @@ export default function CartItem({ cartItem }: { cartItem: CartItemProps }) {
           {cartItem.price.toLocaleString('fa-IR')}
         </Typography>
 
-        <IconButton onClick={() => removeItem(cartItem.id)} size="small">
+        <IconButton onClick={() => dispatch(removeItem(cartItem.id))} size="small">
           <RemoveIcon fontSize="small" />
         </IconButton>
         <Typography variant="body1" fontSize={18}>

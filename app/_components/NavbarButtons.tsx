@@ -5,10 +5,10 @@ import IconButton from '@mui/material/IconButton';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import MuiLink from '@/app/_components/MuiLink';
-import { useCartStore } from '../_store/cart-store-provider';
+import { useAppSelector } from '../_store/hooks';
 
 export default function NavbarButtons({ session }: { session: string | null }) {
-  const { items } = useCartStore(state => state);
+  const { items } = useAppSelector(state => state.cart);
   const total = items.reduce((total, item) => (total += item.quantity), 0);
   const totalFa = total === 0 ? 0 : total.toLocaleString('fa-IR');
 

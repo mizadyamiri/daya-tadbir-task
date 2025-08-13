@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/app/_components/NavBar';
 import Footer from '@/app/_components/Footer';
 import Box from '@mui/material/Box';
-import { CartStoreProvider } from './_store/cart-store-provider';
+import StoreProvider from './_store/StoreProvider';
 import QueryProvider from './_components/QueryProvider';
 
 export const yekan = localFont({
@@ -35,7 +35,7 @@ export default function RootLayout({
             <CssBaseline />
 
             <QueryProvider>
-              <CartStoreProvider>
+              <StoreProvider>
                 <Navbar />
 
                 <main>
@@ -43,7 +43,7 @@ export default function RootLayout({
                 </main>
 
                 <Footer />
-              </CartStoreProvider>
+              </StoreProvider>
             </QueryProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
