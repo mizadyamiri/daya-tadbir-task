@@ -8,19 +8,18 @@ import { Controller } from 'react-hook-form';
 import FormHelperText from '@mui/material/FormHelperText';
 
 interface PropType extends FormInputProps {
-  provinceId: number;
+  provinceId: string;
 }
 
 export default function SelectCity({ provinceId, name, label, control }: PropType) {
   const selectedProvinceCities = allCities.filter(
-    city => city.province_id === provinceId,
+    city => city.province_id.toString() === provinceId,
   );
 
   return (
     <Controller
       name={name}
       control={control}
-      rules={{ required: `${label} ضروریست  `, min: 1 }}
       render={renderProps => (
         <FormControl
           fullWidth
@@ -36,12 +35,12 @@ export default function SelectCity({ provinceId, name, label, control }: PropTyp
             onChange={renderProps.field.onChange}
           >
             {selectedProvinceCities.map(city => (
-              <MenuItem key={city.id} value={city.id}>
+              <MenuItem key={city.id} value={city.id.toString()}>
                 {city.name}
               </MenuItem>
             ))}
           </Select>
-          <FormHelperText>{renderProps.formState.errors[name]?.message}</FormHelperText>
+          <FormHelperText>{renderProps.fieldState.error?.message ?? null}</FormHelperText>
         </FormControl>
       )}
     />

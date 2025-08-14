@@ -7,7 +7,6 @@ export default function TextInput({ name, label, control }: FormInputProps) {
     <Controller
       name={name}
       control={control}
-      rules={{ required: `${label} ضروریست  ` }}
       render={renderProps => (
         <TextField
           id={name}
@@ -19,7 +18,7 @@ export default function TextInput({ name, label, control }: FormInputProps) {
           value={renderProps.field.value}
           onChange={renderProps.field.onChange}
           error={!!renderProps.fieldState.error}
-          helperText={renderProps.formState.errors[name]?.message}
+          helperText={renderProps.fieldState.error?.message ?? null}
         />
       )}
     />

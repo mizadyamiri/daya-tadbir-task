@@ -10,6 +10,31 @@ import Button from '@mui/material/Button';
 import TextInput from './TextInput';
 import { CacheProvider } from '@emotion/react';
 import { rtlCache } from '../_libs/utiles';
+import { array, number, object, string } from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+const validationSchema = object({
+  firstname: string()
+    .required('ضروری')
+    .matches(/^[\u0600-\u06FF\s]+$/, { message: 'حروف فارسی وارد کنید' }),
+  lastname: string()
+    .required('ضروری')
+    .matches(/^[\u0600-\u06FF\s]+$/, { message: 'حروف فارسی وارد کنید' }),
+  mobile: string()
+    .required('ضروری')
+    .matches(/^09\d{9}$/, { message: 'شماره همراه معتبر وارد کنید' }),
+  postalnum: string()
+    .required('ضروری')
+    .matches(/\b(?!(\d)\1{3})[13-9]{4}[1346-9][013-9]{5}\b/, {
+      message: 'کد پستی معتبر وارد کنید',
+    }),
+  address: string()
+    .required('ضروری')
+    .matches(/^[\u0600-\u06FF\s\d-–]+$/),
+  province: string().required('ضروری'),
+  city: string().required('ضروری'),
+  coords: array().of(number().required()).required(),
+});
 
 interface FormValues {
   firstname: string;
@@ -17,9 +42,9 @@ interface FormValues {
   mobile: string;
   postalnum: string;
   address: string;
-  province: number | '';
-  city: number | '';
-  coords: object;
+  province: string;
+  city: string;
+  coords: number[];
 }
 
 export interface FormInputProps {
@@ -41,6 +66,7 @@ const defaultValues: FormValues = {
 
 export default function CheckoutForm() {
   const { handleSubmit, control, watch, reset } = useForm<FormValues>({
+    resolver: yupResolver(validationSchema),
     defaultValues,
   });
   const provinceId = watch('province');
@@ -72,12 +98,7 @@ export default function CheckoutForm() {
           <TextInput name="mobile" label="موبایل" control={control} />
           <TextInput name="postalnum" label="کد پستی" control={control} />
           <SelectProvince name="province" label="استان" control={control} />
-          <SelectCity
-            name="city"
-            label="شهر"
-            control={control}
-            provinceId={provinceId as number}
-          />
+          <SelectCity name="city" label="شهر" control={control} provinceId={provinceId} />
           <TextInput name="address" label="آدرس" control={control} />
           <Map name="coords" label="نقشه" control={control} />
 

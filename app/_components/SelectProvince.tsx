@@ -12,7 +12,6 @@ export default function SelectProvince({ name, label, control }: FormInputProps)
     <Controller
       name={name}
       control={control}
-      rules={{ required: `${label} ضروریست  `, min: 1 }}
       render={renderProps => (
         <FormControl
           fullWidth
@@ -28,12 +27,12 @@ export default function SelectProvince({ name, label, control }: FormInputProps)
             onChange={renderProps.field.onChange}
           >
             {allProvinces.map(province => (
-              <MenuItem key={province.id} value={province.id}>
+              <MenuItem key={province.id} value={province.id.toString()}>
                 {province.name}
               </MenuItem>
             ))}
           </Select>
-          <FormHelperText>{renderProps.formState.errors[name]?.message}</FormHelperText>
+          <FormHelperText>{renderProps.fieldState.error?.message ?? null}</FormHelperText>
         </FormControl>
       )}
     />
