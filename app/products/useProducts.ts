@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { getProducts, Product } from '../_libs/data-services';
+import { getProducts } from '../_libs/data-services';
 
-export default function useProducts(preFetchedProducts: Product[]) {
+export default function useProducts() {
   const {
     isLoading,
     data: products,
@@ -9,7 +9,6 @@ export default function useProducts(preFetchedProducts: Product[]) {
   } = useQuery({
     queryKey: ['products'],
     queryFn: getProducts,
-    initialData: preFetchedProducts,
   });
 
   return { isLoading, products, error };

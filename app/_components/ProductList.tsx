@@ -1,24 +1,30 @@
 'use client';
 
-import { Product as IProduct } from '../_libs/data-services';
 import Grid from '@mui/material/Grid';
 import Product from './Product';
 import useProducts from '../products/useProducts';
 import { useSearchParams } from 'next/navigation';
 import Pagination from './Pagination';
+import ProductListSkeleton from './ProductListSkeleton';
 
 interface Props {
-  preFetchedProducts: IProduct[];
+  // preFetchedProducts: IProduct[];
   session: string | null;
 }
 
-export default function ProductList({ preFetchedProducts, session }: Props) {
-  const { products } = useProducts(preFetchedProducts);
+export default function ProductList({ session }: Props) {
+  const { products, isLoading, error } = useProducts();
   const searchParams = useSearchParams();
+
+  if (isLoading) return <ProductListSkeleton />;
+
+  if (error) return null;
 
   const filter = searchParams.get('filter') ?? 'all';
   const filteredProducts =
-    filter === 'all' ? products : products.filter(product => product.category === filter);
+    filter === 'all'
+      ? products!
+      : products!.filter(product => product.category === filter)!;
 
   const maxNumOfItems = 8;
   const pageNum = searchParams.get('page') ?? 1;

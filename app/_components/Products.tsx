@@ -1,4 +1,3 @@
-import { getProducts } from '../_libs/data-services';
 import { getSession } from '@/app/_libs/auth';
 import { Suspense } from 'react';
 import ProductList from '@/app/_components/ProductList';
@@ -9,7 +8,6 @@ import ProductListSkeleton from '@/app/_components/ProductListSkeleton';
 import Filter from './Filter';
 
 export default async function Products() {
-  const products = await getProducts();
   const session = await getSession();
 
   return (
@@ -27,7 +25,7 @@ export default async function Products() {
         </Stack>
 
         <Suspense fallback={<ProductListSkeleton />}>
-          <ProductList preFetchedProducts={products} session={session} />
+          <ProductList session={session} />
         </Suspense>
       </Stack>
     </Container>
